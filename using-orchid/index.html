@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>The Orchid Client - Orchid</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "The Orchid Client";
+    var mkdocs_page_input_path = "using-orchid.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Orchid</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../accounts/">Orchid Accounts</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">The Orchid Client</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#quick-setup">Quick Setup</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#access-an-orchid-account">Access an Orchid account</a></li>
+        
+            <li><a class="toctree-l3" href="#add-the-orchid-account-to-profile">Add the Orchid account to profile</a></li>
+        
+            <li><a class="toctree-l3" href="#connecting">Connecting</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#key-concepts">Key concepts</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#orchid-accounts">Orchid Accounts</a></li>
+        
+            <li><a class="toctree-l3" href="#hops">Hops</a></li>
+        
+            <li><a class="toctree-l3" href="#profile-manager">Profile Manager</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#how-to-create-an-orchid-hop">How to create an Orchid hop</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#buy-an-orchid-account-iosmacos-only">Buy an Orchid account (iOS/macOS only)</a></li>
+        
+            <li><a class="toctree-l3" href="#linking-an-orchid-account">Linking an Orchid account</a></li>
+        
+            <li><a class="toctree-l3" href="#create-a-custom-account">Create a custom account</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#how-to-restore-deleted-hops">How to restore deleted hops</a></li>
+    
+
+    <li class="toctree-l2"><a href="#a-note-on-multiple-hops">A note on multiple hops</a></li>
+    
+
+    <li class="toctree-l2"><a href="#using-traditional-vpn-connections">Using traditional VPN connections</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#openvpn">OpenVPN</a></li>
+        
+            <li><a class="toctree-l3" href="#wireguard">WireGuard</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#using-the-traffic-monitor">Using the traffic monitor</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#filters">Filters</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#gathering-logs">Gathering Logs</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#android-prerequisites">Android Prerequisites</a></li>
+        
+            <li><a class="toctree-l3" href="#android-and-ios-prerequisites">Android and iOS Prerequisites</a></li>
+        
+            <li><a class="toctree-l3" href="#cydia-impactor">Cydia Impactor</a></li>
+        
+            <li><a class="toctree-l3" href="#adb-logcat-android">adb logcat (Android)</a></li>
+        
+            <li><a class="toctree-l3" href="#sanitizing-the-logs">Sanitizing the Logs</a></li>
+        
+            <li><a class="toctree-l3" href="#sharing-the-logs">Sharing the Logs</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#orchid-app-troubleshootingfaqs">Orchid App troubleshooting/FAQs</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#help-my-internet-connection-shut-off-after-i-turned-orchid-on">Help, my Internet connection shut off after I turned Orchid on</a></li>
+        
+            <li><a class="toctree-l3" href="#i-cant-find-my-qr-code-after-making-an-account">I can’t find my QR code after making an account</a></li>
+        
+            <li><a class="toctree-l3" href="#low-balancedepositefficiency-warning">Low balance/deposit/efficiency warning</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../orchid-dapp/">The Orchid DApp</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../faq/">FAQ</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Orchid</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>The Orchid Client</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="quick-setup">Quick Setup</h1>
+<p>To run Orchid with the decentralized network of providers, you will need an Orchid account first. Access to an Orchid account is a requirement, as that is the payment account that pays the providers. Once you have an account, you can then set up the profile (typically done automatically) and hit the connect button to get VPN service.</p>
+<h2 id="access-an-orchid-account">Access an Orchid account</h2>
+<p>See set up an Orchid account on how to buy, create or get access to an Orchid account.</p>
+<h2 id="add-the-orchid-account-to-profile">Add the Orchid account to profile</h2>
+<p>The Orchid account can be added to the client app by either scanning the QR code, or copy/pasting the account into the app. Look for the “Copy” button next to the QR code in the dApp which will copy the text of the account into your clipboard. If someone shares an account purely by text, you can also copy the account to the clipboard by highlighting the text of the account and hitting copy.</p>
+<p>Once you have the account information via QR or text, you can then go to Manage Profile -&gt; New Hop -&gt; Link Orchid Account which brings up the interface to either scan the QR code, or paste in the text from the clipboard.</p>
+<h2 id="connecting">Connecting</h2>
+<p>After attaching the account, you will end up back at the Home screen and can tap Connect to connect to one of the decentralized VPN providers. If there is a problem with an Orchid account used in the profile, a red exclamation mark will appear in the Manage Profile button. If this mark appears, the app will not be able to connect successfully to a provider. Read the Orchid account troubleshooting guide for help.</p>
+<p>After tapping connect, the Orchid app will do a number of things:
+* Show the “Connecting” status
+* Stop all internet traffic across the device (kill switch)
+* Go through the stake-weighted random selection to find a provider
+* Check to ensure that provider is in the Curator
+* Connect to the provider
+* If an error is hit, go back to 2 and re-try
+* Change the status from “Connecting” to “Connected” and change the screen state from white to purple</p>
+<p>Note that this process can sometimes take a few minutes, depending on the status of Orchid’s providers. It is also possible to connect to a server, have the screen change states, and then have the connection die. Typically turning the app off/on can help kickstart the reconnect process whenever you experience no connectivity.</p>
+<h1 id="key-concepts">Key concepts</h1>
+<h2 id="orchid-accounts">Orchid Accounts</h2>
+<p>To access the Orchid network of providers, you need either Orchid Credits purchased with your native currency within the Orchid App (iOS/macOS only), or an Orchid Account created and funded using crypto currency with the dApp at account.orchid.com</p>
+<p>Credits can be purchased in the iOS or macOS app by hitting ‘Buy Orchid Credits’ in the notification area, or by going to ‘Manage Profile’, ‘New Hop’, and then ‘Buy Orchid Account’. While Orchid Credits are simpler to set up, creating an Orchid account using the dApp gives more control over the account, as purchased accounts are limited: there is no way to top-up, fix small deposits or to withdraw the funds from a purchased account.</p>
+<p>Jump to <a href="https://docs.orchid.com/en/stable/accounts/">Orchid Accounts</a> for more information.</p>
+<h2 id="hops">Hops</h2>
+<p>Orchid ‘hops’ are VPN connections to the Internet. Examples include a connection to an Orchid node or an OpenVPN connection to an OpenVPN server. You can add and delete hops from the ‘Manage Profile’ screen within the Orchid App. Each hop will need a form of authentication to make a server connection. When multiple hops are added, internet traffic for the device goes through each server from top to bottom.</p>
+<p>To add a hop in the Orchid Client, go to ‘Manage Profile’ and click ‘New Hop’. From here, you can choose to:
+* Buy an Orchid Account (iOS/macOS only feature)
+* Link an Orchid Account
+* Create a Custom Account (Android only feature)
+* Enter an OpenVPN config using your credentials
+* Enter a WireGuard config</p>
+<p>Orchid has its own VPN wireline protocol, the Orchid protocol. The traffic to and from Orchid nodes uses the Orchid protocol. The traffic appears as webRTC traffic, which is advantageous for security and includes tiny nanopyments that flow with the traffic.</p>
+<p>Each Orchid node also has a Curator — this is the curated list that is associated with the hop. When a connection is initiated, the Curator creates a subset of the available Orchid nodes for the hop to create the connection.</p>
+<p>The main component of the Orchid node is the Orchid account associated with it. Each Orchid hop requires a valid Orchid account to continue to pay for VPN service.</p>
+<h2 id="profile-manager">Profile Manager</h2>
+<p>To access the profile manager, hit ‘Manage Profile’ on the Orchid home / status screen. </p>
+<p>The profile manager is used to organize hops into the “profile” that your device will use to connect to the Internet. A typical VPN user only needs one hop. Hops can be mixed and matched here to form your own custom-styled circuits. For example, you could configure a profile with three different Orchid hops, so that your Internet traffic passes through three different servers between your device and the server you are accessing. </p>
+<p>On this screen, you’ll also see ‘View Deleted Hops’ at the bottom. This is an easy way to restore recently removed hops.</p>
+<p>There is currently no way to save profiles, nor an easy way to switch between them. The profile manager allows you to only modify the active profile at any given time. If you delete hops, they are still saved and available to be restored.</p>
+<h1 id="how-to-create-an-orchid-hop">How to create an Orchid hop</h1>
+<p>To use Orchid's decentralized providers, you will need to add an Orchid hop to your profile. The WireGuard and OpenVPN options are for making connections to existing servers where you have login credentials. </p>
+<p>Orchid hops will use the attached Orchid account to send payments and then connect to a random provider on the network.</p>
+<p>From the Manage Profile screen, tap "New Hop" and then select an option:</p>
+<h2 id="buy-an-orchid-account-iosmacos-only">Buy an Orchid account (iOS/macOS only)</h2>
+<p>In the iOS and macOS app, you can simply buy a pre-created Orchid account. These accounts come in 3 different sizes and are pre-filled with funds. The purchased accounts can only connect to our list of <a href="https://www.orchid.com/preferredproviders">preferred providers</a>.</p>
+<p>Purchased accounts are custodied by Orchid. There is no current way to add funds to them. Email contact@orchid.com for help with purchased accounts.</p>
+<h2 id="linking-an-orchid-account">Linking an Orchid account</h2>
+<p>If you have created an Orchid account in the dApp, you can tap Link Orchid Account to simply scan in the QR code. The other option is to copy the text of the account into your clipboard and then tap the Paste option to read in the account that way.</p>
+<p>Orchid accounts are shareable, so if your friend sends you a QR code or the text of their account, you can link the account and use it by using the Link Orchid Account option.</p>
+<h2 id="create-a-custom-account">Create a custom account</h2>
+<p>The custom account option is in the Android app only. With this option you can generate a signer key and use that with your funder wallet to fund the account in the dApp. </p>
+<p>To create a custom account:
+* Tap Create Custom Account from the New Hop menu
+* Paste in the public address of your funder wallet
+* Select "Generate new key"
+* Tap Save in the upper right
+* Tap the Orchid hop from the Profile Manager
+* Tap Copy next to the signer address
+* Paste the signer address into the dApp on the <a href="https://docs.orchid.com/en/stable/orchid-dapp/#create-account/">Create Account</a> flow</p>
+<p>The last step will fund the empty account that was created in the app.</p>
+<h1 id="how-to-restore-deleted-hops">How to restore deleted hops</h1>
+<p>To restore deleted hops, go to ‘Manage Profile’ from the home / status screen. At the bottom you’ll see a link to ‘View Deleted Hops’.</p>
+<p>You’ll need to:
+* Click into the hop you want to restore
+* Hit ‘Share Orchid Account’ and hit ‘Copy’
+* Return to the ‘Manage Profile’ screen, click ‘New Hop’ then ‘Link Orchid Account’ and ‘Paste’
+* Your deleted hop will now appear at the bottom of your list of hops</p>
+<h1 id="a-note-on-multiple-hops">A note on multiple hops</h1>
+<p>Orchid supports the use of multiple hops, allowing your Internet connection to be routed through an arbitrary number of VPN servers before reaching its destination. For more information about the implications of multiple hops, refer to the FAQ section on Security.</p>
+<p>Different protocols can be used with the multiple hop feature. For example, you could set up your traffic to go to three different Orchid servers, three different WireGuard servers or a combination therein. </p>
+<h1 id="using-traditional-vpn-connections">Using traditional VPN connections</h1>
+<h2 id="openvpn">OpenVPN</h2>
+<p>To use an OpenVPN hop, you’ll need your username, password and configuration file from your VPN provider. You can usually find these in your provider VPN account under manual configuration or OpenVPN configuration.</p>
+<p>To use your OpenVPN configuration, go to ‘Manage Profile’ and ‘New Hop’ then ‘Enter OpenVPN Config’.</p>
+<h2 id="wireguard">WireGuard</h2>
+<p>To use your OpenVPN configuration, go to ‘Manage Profile’ and ‘New Hop’ then ‘Enter WireGuard Config’.</p>
+<p>Paste your WireGuard configuration into the text box and tap save in the upper right corner. The WireGuard account will now become an active hop available at the manage profile screen.</p>
+<h1 id="using-the-traffic-monitor">Using the traffic monitor</h1>
+<p>Orchid has a built-in traffic monitor that can run with or without an Orchid account. Using the traffic monitor is similar to WireShark--and Orchid works on iOS! The traffic monitor also works across every platform that Orchid supports.</p>
+<p>There are two ways to enable the traffic monitor:
+* If you have a connection with at least one hop set up, when your connection is active you will be able to use the traffic monitor
+* If you have no hops set up, you can go to ‘Settings’ and then you can enable ‘Allow No Hop VPN’</p>
+<p>Once it’s enabled, you can find the traffic monitor from the home screen by opening the menu from the icon on the top left of the screen. ‘Traffic Monitor’ is at the bottom of the menu.</p>
+<h2 id="filters">Filters</h2>
+<p>Enter a hostname or partial hostname into the search bar to show only matching rows.
+Enter multiple terms separated by a space to combine hostname filters using “AND” logic.  e.g. “goog api” will match rows including both “goog” and “api”, such as “api1.google.com”.
+Use a “-” minus sign to exclude terms.  e.g. “-goog” will show all hostnames <em>except</em> those matching “goog”.  You can mix these to include and exclude combinations such as: “google -api” to find all “google” entries excluding those with “api”.
+Use “prot:<name of protocol>”to filter by protocol name.  e.g. “prot:imap” will match all traffic identified as “imap” connections and  “-prot:dns” will filter out all DNS queries from the results.</p>
+<h1 id="gathering-logs">Gathering Logs</h1>
+<p>When debugging client-side issues, you might be requested to share logs. These logs provide advanced details about what the Orchid client is doing behind the scenes to provide you with a private browsing experience. This page is designed to help you collect and share the logs.</p>
+<h2 id="android-prerequisites">Android Prerequisites</h2>
+<p>Start by turning on developer and debugging mode on the phone by going to <code>Settings -&gt; About Phone -&gt; About Software</code> and tapping on the build number repeatedly until it prompts you to enable developer mode. Then go to <code>Settings -&gt; Developer Settings -&gt; Turn on USB Debugging</code>. Finally, you can run the following command on your computer with your phone connected via USB to view the logs.</p>
+<h2 id="android-and-ios-prerequisites">Android and iOS Prerequisites</h2>
+<p>When you connect your device to your computer, it will prompt you to trust the computer. It is important that you do so. Otherwise, you will be unable to collect logs.</p>
+<h2 id="cydia-impactor">Cydia Impactor</h2>
+<p>The easiest way to gather logs from both iOS and Android devices is through <a href="http://www.cydiaimpactor.com">Cydia Impactor</a>. In the main window, use the select box to pick the correct device (if you only have one mobile device connected to your computer, this will be done for you). Next, go to <code>Device -&gt; Watch Log...</code>. A terminal window will appear and it will start to show a streaming syslog from your mobile device.</p>
+<h2 id="adb-logcat-android">adb logcat (Android)</h2>
+<p>If you are using an Android device, you can alternatively collect logs through the Android Debug Bridge (ADB). You can follow this <a href="https://www.xda-developers.com/install-adb-windows-macos-linux/">guide</a> to install adb on Windows, macOS, or Linux. Once installed, you can run the following command in a terminal to view the logs:</p>
+<pre><code>adb logcat
+</code></pre>
+
+<h2 id="sanitizing-the-logs">Sanitizing the Logs</h2>
+<p>The logs you gather will contain information from all applications and actions taken on your device during the period that logs are being gathered. These are not all necessary for debugging purposes. You can optionally filter out all lines that do not contain the string <code>orchid</code> as a quick way to sanitize the output. You can do this with a command like:</p>
+<pre><code>grep -i 'orchid' client.log
+</code></pre>
+
+<p>Where  <code>client.log</code> is the file containing the syslog output from the device. You should also be careful to filter out your various secret keys from the logs:</p>
+<pre><code>grep -vi 'secret' client.log
+</code></pre>
+
+<h2 id="sharing-the-logs">Sharing the Logs</h2>
+<p>The logs you gather will be quite long. You almost certainly do not want to paste them in their entirety into something like a Telegram message. Instead, we encourage you to either share them as an attachment via your preferred method of communication. Or if you are using a communication platform that doesn't support attachments, you can utilize a private pastebin service such as <a href="https://gist.github.com">GitHub Gists</a>, which will provide you with a secret URL you can share to grant access to your logs.</p>
+<h1 id="orchid-app-troubleshootingfaqs">Orchid App troubleshooting/FAQs</h1>
+<h2 id="help-my-internet-connection-shut-off-after-i-turned-orchid-on">Help, my Internet connection shut off after I turned Orchid on</h2>
+<p>Orchid has a built-in “kill switch” and so turning Orchid on will destroy all existing connections to the Internet and force them to go through Orchid. If Orchid is trying to connect, the Internet will be shut off until a connection is established. This is a feature that ensures that none of your Internet traffic will accidentally leak due to a disconnect/reconnect without you pressing the button first. This ensures that when you hit “connect” your traffic is now only going through Orchid.</p>
+<p>Read <a href="https://docs.orchid.com/en/stable/using-orchid/#connecting">Connecting</a> for more information on exactly what happens when you hit connect.</p>
+<h2 id="i-cant-find-my-qr-code-after-making-an-account">I can’t find my QR code after making an account</h2>
+<p>When the QR code or text of an account is truly lost, the account is lost as well. If the account was ever added to the Orchid app, the account should appear under View Deleted hops from the Manage Profile screen.</p>
+<p>The funds are NOT LOST! To recover the funds from a lost account, you will need to <a href="https://docs.orchid.com/en/stable/orchid-dapp/#withdraw">withdraw the funds</a> from that Orchid account using the dApp and the funder wallet used to create the account. </p>
+<h2 id="low-balancedepositefficiency-warning">Low balance/deposit/efficiency warning</h2>
+<p>Under certain market conditions, users need to increase the size of their deposit. The market conditions are primarily driven by the price of the currency and the amount of network fees required for the provider to claim a ticket. The face value of the ticket needs to be large enough for it to be profitable to pay the network fees to grab it. </p>
+<p>To fix this, see <a href="https://docs.orchid.com/en/stable/accounts/#deposit-size-too-small">Deposit size too small</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../orchid-dapp/" class="btn btn-neutral float-right" title="The Orchid DApp">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../accounts/" class="btn btn-neutral" title="Orchid Accounts"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../accounts/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../orchid-dapp/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
